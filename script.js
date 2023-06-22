@@ -76,9 +76,6 @@ function changeColor () {
 //Called in the html, onclick was easier than event listener
 function getColor (choice) {
     color= choice
-    if (color === 'random') {
-        randombtn.style.backgroundColor='pink';
-    } 
 }
 
 function clearGrid () {
