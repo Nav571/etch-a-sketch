@@ -3,12 +3,10 @@ const inputbtn=document.getElementById('inputbtn');
 const squares=gridbox.querySelectorAll('div');
 const btns=document.querySelectorAll('.btns');
 const clear=document.getElementById('clear');
+const randombtn=document.getElementById('random');
 let colorPicker=document.getElementById('colorpicker');
 
 let color = 'black';
-
-inputbtn.addEventListener('click', changeGrid); 
-
 
 function createGrid (size) {
     gridbox.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -72,7 +70,18 @@ function changeColor () {
 
 function getColor (choice) {
     color= choice
+    if (color === 'random') {
+        randombtn.style.backgroundColor='pink';
+    } 
 }
+function clearGrid () {
+    const gridbox=document.querySelector('.gridbox');
+    const squares=gridbox.querySelectorAll('div');
+    squares.forEach((div) => div.style.backgroundColor= 'white');
+}
+
+inputbtn.addEventListener('click', changeGrid); 
+clear.addEventListener('click', clearGrid);
 colorPicker.addEventListener('change', () => {
     return colorPicker.value;
 })
