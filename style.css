@@ -26,6 +26,9 @@ body {
     gap: 130px;
     padding: 10px 60px;
 }
+#inputbtn {
+    width: 160px;
+}
 .bottom {
     display: flex;
     flex-direction: column;
@@ -52,6 +55,28 @@ body {
     background-color: #E7E8D1;
     color: #B85042;
 }
+#colorpicker {
+    width: 50px;
+}
+#colorpick {
+    font-size: 19px;
+    color: #B85042;
+}
+.picks {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #5c5a5a;
+    background-color: #E7E8D1;
+    width: auto;
+    height: 30px;
+    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 5px;
+}
 
 #random:hover {
     background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
@@ -65,7 +90,7 @@ body {
     background-color: burlywood;
 }
 #increment:hover {
-    background-image: linear-gradient(90deg, #e9e8e3, #000000);
+    background-color: gray;
 }
 #eraser:hover {
     background-color: white;

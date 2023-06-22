@@ -57,7 +57,23 @@ function getSize (input) {
         return "Please enter a number between 2-100";
     }
 }
+
 function changeColor () {
-    this.style.backgroundColor= color;
-    
+    if (color === "random") {
+        this.style.backgroundColor= `hsl(${Math.random() *360}, 100%,50%)`;
+    }else if (color === "anycolor") {
+        this.style.backgroundColor= colorPicker.value;
+    } else if (color === "gray") {
+        this.style.backgroundColor= 'gray'; 
+    }   else{
+        this.style.backgroundColor= color;
+    }
 }
+
+function getColor (choice) {
+    color= choice
+}
+colorPicker.addEventListener('change', () => {
+    return colorPicker.value;
+})
+colorPicker.value = '#286d8a';

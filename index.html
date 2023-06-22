@@ -13,19 +13,23 @@
     <div class="container">
         <h1 class="header">ETCH-A-SKETCH</h1>
         <div class="sizechange">
-            <input type="button" class="size" value="Change size"/>
+            <input type="button" class="btn" id="inputbtn" value="choose grid size" input="16"/>
             <button class="btn" id="clear">Clear</button>
         </div>
-        <div class="gridbox"> </div>
-        <div class="btns">
-            <button class="btn" id="black">Black</button>
-            <button class="btn" id="random">Random</button>
-            <button class="btn" id="choose">Any Color</button>
-            <button class="btn" id="eraser">Eraser</button>
-            <button class="btn" id="increment">Darken</button>
-        </div>
-        <div class="footer">Created by NavR for the The Odin Project June 2023.</div>
-    </div>
+        <div class="bottom">
+            <div class="gridbox"> </div>
+            <div class="btns">
+                <button class="btn" id="black" onclick="getColor('black')">Black</button>
+                <button class="btn" id="random" onclick="getColor('random')">Random</button>
+                <div class="picks">
+                    <label for="color-picker" id="colorpick">Choose color</label>
+                    <input type="color" class="btn" id="colorpicker" value="#e66465" onclick="getColor('anycolor')">
+                </div>
+                <button class="btn" id="eraser" onclick="getColor('white')">Eraser</button>
+                <button class="btn" id="increment" onclick="getColor('gray')">Gray</button>
+            </div>
+        </div> 
+    <div class="footer">Created by NavR for the The Odin Project June 2023.</div>
     
 </body>
 </html>
