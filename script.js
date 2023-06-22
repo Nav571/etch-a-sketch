@@ -1,3 +1,5 @@
+// Completed JavaScript for an Etch-a-sketch project
+
 const gridbox=document.querySelector('.gridbox');
 const inputbtn=document.getElementById('inputbtn');
 const squares=gridbox.querySelectorAll('div');
@@ -8,6 +10,7 @@ let colorPicker=document.getElementById('colorpicker');
 
 let color = 'black';
 
+//create initial grid that shows when the page loads
 function createGrid (size) {
     gridbox.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridbox.style.gridTemplateRows= `repeat(${size}, 1fr)`;
@@ -23,11 +26,13 @@ function createGrid (size) {
 }
 createGrid(16);
 
+//Removes the divs so that its cleaner when grid size is changed
 function removeAllChildNodes(parent){
     while(parent.firstChild){
         parent.removeChild(parent.firstChild);
     }
 }
+//Allows the user to select a size
 function changeGrid (size) {
     removeAllChildNodes(gridbox);
     size= getSize();  
@@ -68,17 +73,21 @@ function changeColor () {
     }
 }
 
+//Called in the html, onclick was easier than event listener
 function getColor (choice) {
     color= choice
     if (color === 'random') {
         randombtn.style.backgroundColor='pink';
     } 
 }
+
 function clearGrid () {
     const gridbox=document.querySelector('.gridbox');
     const squares=gridbox.querySelectorAll('div');
     squares.forEach((div) => div.style.backgroundColor= 'white');
 }
+
+//EventListeners
 
 inputbtn.addEventListener('click', changeGrid); 
 clear.addEventListener('click', clearGrid);
